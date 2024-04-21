@@ -1,15 +1,21 @@
 ---
-title: readme
+title: README
 author: N_ha
 ---
 
-## 環境構築
+サークルでの説明用に書き直したコードを上げます。
 
-windowsを想定
+windowsを想定しています。
+
+## 環境構築
 
 1. Python 3.11 をインストール
 
-   [公式サイト](https://www.python.org/downloads/)
+   AtCoder に入っているのは `3.11.4` なので、 `3.11.x` を入れておけば基本的に問題ないはず
+
+   [公式サイト](https://www.python.org/)
+
+   [3.11.4 のリリースページ](https://www.python.org/downloads/release/python-3114/)
 
 2. できたか確認
 
@@ -32,11 +38,13 @@ windowsを想定
    .venv/Scripts/Activate.ps1
    ```
 
+   venv じゃなくても大丈夫です。
+
 4. AtCoder で利用できるライブラリのインストール
 
    [参考](https://docs.google.com/spreadsheets/d/1HXyOXt5bKwhKWXruzUvfMFHQtBxfZQ0047W7VVObnXI/edit#gid=408033513)
 
-   `torch` は 1.13.1 の指定だが現在はインストール不可能なので適当なものをインストール
+   `torch` は 1.13.1 の指定だが現在はインストール不可能なので適当なものをインストール(AtCoderだと基本使わないから入れなくても大丈夫だと思う)。
 
    ```powershell
    python -m pip install `
@@ -87,13 +95,13 @@ windowsを想定
 上記の環境構築を行い、 black 、 isort もインストールされていることが前提です。
 また、実行前に仮想環境に入ってください。
 
-できること
+### できること
 
 * Python ファイルの実行
 * 入力ファイルと出力ファイルの受け取り
 * black と isort の実行
 
-実行方法
+### 使い方
 
 1. powershell を起動
 
