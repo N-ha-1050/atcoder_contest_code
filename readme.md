@@ -79,3 +79,40 @@ windowsを想定
 
    * black: フォーマッター
    * isort: import の適正化
+
+## 実行方法
+
+普通に Python から実行できますが、 AtCoder 用に以下の機能をつけた `run.ps1` ファイルを作りました。
+
+上記の環境構築を行い、 black 、 isort もインストールされていることが前提です。
+また、実行前に仮想環境に入ってください。
+
+できること
+
+* Python ファイルの実行
+* 入力ファイルと出力ファイルの受け取り
+* black と isort の実行
+
+実行方法
+
+1. powershell を起動
+
+   スタートボタン → 「powershell」で検索 などから起動できます。
+
+2. 仮想環境に入る
+
+   ```powershell
+   .venv\Scripts\activate.ps1
+   ```
+
+3. 実行
+
+   ```powershell
+   .\run file [-in .\in.txt] [-out .\out.txt]
+   ```
+
+   例
+
+   ```powershell
+   .\run main.py
+   ```
