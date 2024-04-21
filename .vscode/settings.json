@@ -5,6 +5,7 @@
         "gmpy",
         "lightgbm",
         "mpmath",
+        "mypy",
         "networkx",
         "numba",
         "numpy",
