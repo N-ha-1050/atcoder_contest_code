@@ -1,0 +1,18 @@
+{
+    "cSpell.words": [
+        "bitarray",
+        "cppyy",
+        "gmpy",
+        "lightgbm",
+        "mpmath",
+        "networkx",
+        "numba",
+        "numpy",
+        "ortools",
+        "scikit",
+        "scipy",
+        "setuptools",
+        "sortedcontainers",
+        "sympy"
+    ]
+}
