@@ -23,4 +23,3 @@ numba==0.57.0
 
 black
 isort
-mypy

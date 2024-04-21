@@ -74,9 +74,8 @@ windowsを想定
 5. その他ライブラリのインストール
 
    ```powershell
-   python -m pip install black isort mypy
+   python -m pip install black isort
    ```
 
    * black: フォーマッター
    * isort: import の適正化
-   * mypy: 型ヒントの確認
