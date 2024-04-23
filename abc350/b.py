@@ -13,7 +13,7 @@ def solve(N, Q, T):
         mem[t] = not mem[t]
 
     res = sum(mem)
-    return mem
+    return res
 
 
 if __name__ == "__main__":
