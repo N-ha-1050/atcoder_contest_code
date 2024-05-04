@@ -12,4 +12,4 @@ Write-Host
 python -m isort $file
 Write-Host
 # python -m mypy $file
-Write-Host 実行が完了しました。
+Write-Host 実行が完了しました
