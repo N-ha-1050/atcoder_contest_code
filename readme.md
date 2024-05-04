@@ -93,13 +93,17 @@ windowsを想定しています。
 普通に Python から実行できますが、 AtCoder 用に以下の機能をつけた `run.ps1` ファイルを作りました。
 
 上記の環境構築を行い、 black 、 isort もインストールされていることが前提です。
-また、実行前に仮想環境に入ってください。
+また、実行前に仮想環境に入るのを忘れないでください。
 
 ### できること
 
-* Python ファイルの実行
-* 入力ファイルと出力ファイルの受け取り
-* black と isort の実行
+* `create.ps1`
+  * コンテストごとのフォルダを作成
+  * 問題ごとのPythonファイルを `main.py` からコピー
+* `run.ps1`
+  * Python ファイルの実行
+  * 入力ファイルと出力ファイルの受け取り
+  * black と isort の実行
 
 ### 使い方
 
@@ -113,7 +117,29 @@ windowsを想定しています。
    .venv\Scripts\activate.ps1
    ```
 
-3. 実行
+3. コンテストフォルダの作成
+
+   名前が `contest` のフォルダを作成し、その中に `problems` に含まれる問題ごとのPythonファイルを作成します。
+   `problems` が空の場合フォルダ作成のみを行います。
+
+   ```powershell
+   .\create contest [-problems]
+   ```
+
+   例
+
+   ```powershell
+   .\create abc000 a,b,c,d,e
+   ```
+
+4. コーディング
+
+   エディタでコーディングをしてください。
+   VSCode がおすすめです。
+
+5. 実行
+
+  `in` のファイルを標準入力、 `out` のファイルを標準出力として `file` を実行します。
 
    ```powershell
    .\run file [-in .\in.txt] [-out .\out.txt]
