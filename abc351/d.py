@@ -8,30 +8,45 @@ def main():
     print(res)
 
 
-def solve(H, W, S):
+def solve(H: int, W: int, S: list[str]):
 
     # グリッド関係の関数の定義
-    def is_in(i, j):
-        """
-        マス(i, j) がグリッド内に存在するかを返す
+    def is_in(i: int, j: int):
+        """マス(i, j) がグリッド内に存在するかを返す
+
+        Args:
+            i: 高さの座標
+            j: 幅の座標
+        Returns:
+            存在するかを表すbool
         """
         return 0 <= i < H and 0 <= j < W
 
-    def t2o(i, j):
-        """
-        マス(i, j) を一次元化した値を返す
+    def t2o(i: int, j: int):
+        """マス(i, j) を一次元化した値を返す
+
+        Args:
+            i: 高さの座標
+            j: 幅の座標
+        Returns:
+            一次元化した値
         """
         return i * W + j
 
-    def o2t(n):
-        """
-        一次元化したら n になるマス(i, j)を返す
+    def o2t(n: int):
+        """一次元化したら n になるマス(i, j)を返す
+
         n はグリッドに含まれるマスを一次元化した値であることが前提
+
+        Args:
+            n: 一次元化した値
+        Returns:
+            座標を示すtuple
         """
         return n // W, n % W
 
     # 周囲4マスを求めるためのリスト
-    ds = [(1, 0), (0, 1), (-1, 0), (0, -1)]
+    ds: list[tuple[int, int]] = [(1, 0), (0, 1), (-1, 0), (0, -1)]
 
     # DSU(Union-Find) を定義
     dsu = DSU(H * W)
@@ -60,16 +75,17 @@ def solve(H, W, S):
 
     # 各マスと連結している頂点数を求める
     # → 磁石に隣接するマスを除いた到達できるマスの個数
-    cnt = [None for _ in range(H * W)]
+    cnt: list[int] = [0 for _ in range(H * W)]
     for n in range(H * W):
         i, j = o2t(n)
-        cnt[n] = 0 if S[i][j] == "#" else dsu.size(n)
+        if S[i][j] != "#":
+            cnt[n] = dsu.size()
 
     # 磁石に隣接しているマスの個数を足す
     for i in range(H):
         for j in range(W):
             if S[i][j] != "#" and adj_mag[i][j]:
-                mem = set()
+                mem: set[int] = set()
                 for di, dj in ds:
                     ni, nj = i + di, j + dj
                     if not is_in(ni, nj):
@@ -80,6 +96,7 @@ def solve(H, W, S):
                         mem.add(dsu.leader(t2o(ni, nj)))
                 for leader in mem:
                     cnt[leader] += 1
+
     # 最大値を返す
     return max(cnt)
 
