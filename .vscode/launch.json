@@ -8,7 +8,7 @@
             "type": "PowerShell",
             "name": "Launch",
             "request": "launch",
-            "script": ".\\run ${file}"
+            "script": ".\\run ${relativeFile}"
         }
     ]
 }
