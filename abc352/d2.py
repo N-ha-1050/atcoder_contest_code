@@ -1,3 +1,5 @@
+# CPython だと TLE(PyPy なら通る)
+
 from atcoder.segtree import SegTree
 
 
@@ -19,11 +21,11 @@ def solve(N, K, P):
         st_min.set(p, i)
         st_max.set(p, i)
 
-    # 全ての区間で差の最大値を求める
+    # 全ての区間で (最大値 - 最小値) を求める
     res = N
     for i in range(N - K + 1):
         j = i + K
-        res = min(res, st_max(i, j) - st_min(i, j))
+        res = min(res, st_max.prod(i, j) - st_min.prod(i, j))
 
     return res
 
