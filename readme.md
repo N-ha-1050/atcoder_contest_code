@@ -139,7 +139,7 @@ windowsを想定しています。
 
 5. 実行
 
-  `in` のファイルを標準入力、 `out` のファイルを標準出力として `file` を実行します。
+   `in` のファイルを標準入力、 `out` のファイルを標準出力として `file` を実行します。
 
    ```powershell
    .\run file [-in .\in.txt] [-out .\out.txt]
