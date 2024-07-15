@@ -31,7 +31,9 @@ def solve(N, T, S, X):
         # p_s <= x <= p_e かつ n_e <= x <= n_s となる x が存在するかの判定
         # 一般に閉区間[s1, e1]と[s2, e2]に共通区間があることの判定は max(s1, s2) <= min(e1, e2) でできる
         return max(p_s, n_e) <= min(p_e, n_s)
-        return p_s <= n_s and n_e <= p_e
+
+        # 以下でも可能
+        # return p_s <= n_s and n_e <= p_e
 
     # 負の方向に進む蟻のうちすれ違う蟻の開始インデックスと終了インデックス
     neg_st, neg_ed = 0, 0
